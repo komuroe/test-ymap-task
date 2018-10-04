@@ -27,6 +27,13 @@ class EditableMap extends React.Component {
 
   setMapControlInstanceRef = ref => {
     this.map = ref;
+    this.onMapInstanceAvailable();
+  };
+
+  onMapInstanceAvailable = () => {
+    // cycled map causes a bug in the display of waypoints
+    // that's why map duplication is forbidden
+    this.map.options.get('projection').isCycled = () => [false, false];
   };
 
   getCenter = () => {
