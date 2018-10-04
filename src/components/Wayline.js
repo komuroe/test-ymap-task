@@ -9,6 +9,10 @@ const Wayline = ({ waypoints }) => {
       geometry={{
         coordinates: waypoints.map(waypoint => waypoint.coords),
       }}
+      options={{
+        strokeColor: '#e87530',
+        strokeWidth: 1.3,
+      }}
     />
   );
 };

@@ -30,6 +30,7 @@ class WaypointMark extends React.Component {
         }}
         options={{
         draggable: true,
+        preset: 'islands#darkOrangeIcon',
         }}
         onDrag={this.handleDrag}
         instanceRef={this.setPlacemarkControlInstanceRef}
