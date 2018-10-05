@@ -8,30 +8,40 @@ class WaypointMark extends React.Component {
     updateWaypointCoords: PropTypes.func,
     waypoint: WaypointPropTypes,
   };
-
+  componentDidMount() {
+    this.handleGeocode();
+  };
   setPlacemarkControlInstanceRef = ref => {
     this.placemark = ref;
   };
   
   handleDrag = () => {
     this.props.updateWaypointCoords(this.props.waypoint.id, this.placemark.geometry.getCoordinates());
-  };  
+  };
 
+  handleGeocode = () => {
+    const { coords, id } = this.props.waypoint;
+    this.props.getGeocode(coords, (addr) => {
+      this.props.updateWaypointAddr(id, addr);
+    } );
+  };
   render() {
-    const {id, coords, name} = this.props.waypoint;
+    const {id, coords, addr, name} = this.props.waypoint;
     return(
       <Placemark
         key={`placemark-${id}`}
         geometry={{
-        coordinates: coords
+          coordinates: coords
         }}
         properties={{
-        balloonContent: name,
+          balloonContentHeader: `<span class="app-font app-text app-text_weight_bold">${name}</span>`,
+          balloonContentBody: `<hr class="baloon__hr"></hr><span class="baloon__text app-font">${addr}</span>`,
         }}
         options={{
-        draggable: true,
-        preset: 'islands#darkOrangeIcon',
+          draggable: true,
+          preset: 'islands#darkOrangeIcon',
         }}
+        onDragEnd={this.handleGeocode}
         onDrag={this.handleDrag}
         instanceRef={this.setPlacemarkControlInstanceRef}
       />

@@ -31,7 +31,7 @@ class WaypointInput extends React.Component {
     
   render() {
     return(
-      <input className={`waypoint-input app-text`}
+      <input className={`waypoint-input app-font app-text app-text_weight_light`}
         name='name'
         type='text'
         placeholder='Введите название точки'

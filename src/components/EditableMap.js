@@ -36,27 +36,51 @@ class EditableMap extends React.Component {
     this.map.options.get('projection').isCycled = () => [false, false];
   };
 
+  setYmapsInstanceRef = ymaps => {
+    this.ymaps = ymaps;
+  };
+
   getCenter = () => {
     if (this.map) {
-      return this.map.getCenter().slice();      
+      return [...this.map.getCenter()];
+    }
+  };
+
+  getGeocode = (coords, callback) => {
+    if (this.ymaps) {
+      this.ymaps.geocode(coords, {
+        json: true,
+        results: 1
+        }).then(function (result) {
+          const members = result.GeoObjectCollection.featureMember,
+          geoObjectData = (members && members.length) ? members[0].GeoObject : null;
+          if (geoObjectData) {
+            callback(geoObjectData.metaDataProperty.GeocoderMetaData.text)
+          }
+        }, this);
     }
   };
 
 	render() {
 		return(
-			<YMaps>
+			<YMaps
+        onApiAvaliable={(ymaps) => this.setYmapsInstanceRef(ymaps)}
+      >
         <Map 
           state={this.props.mapState} 
           height={this.props.mapSize.height} 
           width={this.props.mapSize.width}
-          instanceRef={this.setMapControlInstanceRef}   
+          instanceRef={this.setMapControlInstanceRef}
+          onClick={this.getGeocode}
         >
 
         {this.props.waypoints.map((waypoint) => (
           <WaypointMark 
             key={`waypointMark-${waypoint.id}`} 
             waypoint={waypoint}
-            updateWaypointCoords={this.props.updateWaypointCoords}            
+            updateWaypointCoords={this.props.updateWaypointCoords}
+            updateWaypointAddr={this.props.updateWaypointAddr}
+            getGeocode={this.getGeocode}
           />
         ))}
 

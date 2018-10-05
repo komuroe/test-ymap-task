@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 li{
   list-style-type: none;
@@ -24,11 +25,18 @@ li{
   left: 0;
   position: inherit;
 }
-.app-text {
-  font-size: 17px;
+.app-font{
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+}
+.app-text {
+  font-size: 17px;  
   color: #333;
+}
+.app-text_weight_light{
+  font-weight: 300;
+}
+.app-text_weight_bold{
+  font-weight: 600;
 }
 .app-heading{
   font-weight: 400;
@@ -37,9 +45,6 @@ li{
   margin: 0;
   border-radius: 4px;
   color: white;
-  /*color: #333333c4;
-  background-color: rgba(255,255,255, 0.5);
-  box-shadow: 4px 1px 20px 12px rgba(255,255,255, 0.5); */
 }
 .app-logo{
   margin-left: 10px;
@@ -61,7 +66,6 @@ li{
   max-height: 450px;
   overflow: auto;
   margin-top: 22px;
-  /* box-shadow: 0 2px 6px 0 rgba(0,0,0,.2); */
   border-radius: 4px;
 }
 .waypoints-list_empty{
@@ -115,21 +119,19 @@ li{
   position: absolute;
   top: 0;
   left: 0;
-  /* opacity: 0; */
 }
-/* .waypoint-item:hover  .waypoint-item__button{
-  opacity: 1;
-} */
 .waypoint-input{
   width: 100%;
   height: 45px;
-  /* box-shadow: 0 2px 6px 0 rgba(0,0,0,.2); */
   border-radius: 4px;
-  border: none;
   outline: none;
   font-size: 17px;
   padding-left: 1em;
   box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.waypoint-input:focus{
+  border-color: #848484;
 }
 .map-wrapper{
   width: 100%;
@@ -140,4 +142,20 @@ li{
   bottom: 0;
   right: 0;
   overflow: hidden;
+}
+.baloon__text{
+  display: inline-block;
+  height: 20px;
+  color: #333;
+  width: 150px;
+  word-break: break-word;
+  opacity: 0.8;
+  font-size: 13px;
+}
+.baloon__hr{
+  background: #848484;
+  border: none;
+  color: #848484;
+  background-color: #848484;
+  height: 1px;
 }

@@ -28,6 +28,7 @@ class App extends Component{
       name: name,
       id: `${Date.now().toString(36)}`,
       coords: coords,
+      addr: '',
     };
     this.setState(prevState => ({
       waypoints: [...prevState.waypoints, waypoint]
@@ -47,8 +48,18 @@ class App extends Component{
       }
       return waypoint;
     });
-    this.setState({waypoints: waypoints});
-  }
+    this.setState({ waypoints });
+  };
+
+  updateWaypointAddr = (id, addr) => {
+    const waypoints = this.state.waypoints.map((waypoint)=>{
+      if (waypoint.id === id) {
+        waypoint.addr = addr;
+      }
+      return waypoint;
+    });
+    this.setState({ waypoints });
+  };
 
   updateWaypointsOrder = (waypoints) => {
     this.setState({ waypoints });
@@ -67,13 +78,14 @@ class App extends Component{
             mapSize={this.state.mapSize} 
             waypoints={this.state.waypoints}
             updateWaypointCoords={this.updateWaypointCoords}
+            updateWaypointAddr={this.updateWaypointAddr}
             registerMapCenterGetter={this.registerMapCenterGetter}
           />
         </div>
         <div className='controls-wrapper'>
           <div className='content-wrapper'>
             <div className='app-heading__wrapper'>
-              <h1 className={`app-heading app-text`}> Редактор маршрутов</h1>
+              <h1 className={`app-heading app-font`}> Редактор маршрутов</h1>
               <LogoIcon strokeColor="white" fillColor="transparent"/>
             </div>
           
@@ -84,7 +96,7 @@ class App extends Component{
             <WaypointsListContainer
               items={this.state.waypoints}
               deleteWaypoint={this.deleteWaypoint}
-              updateWaypointsOrder={this.updateWaypointsOrder}            
+              updateWaypointsOrder={this.updateWaypointsOrder}           
             />
           </div>
         </div>
