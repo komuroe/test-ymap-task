@@ -8,7 +8,7 @@ import WaypointMark from '../src/components/WaypointMark';
 
 describe('WaypointMark', () => {
   it('should render Placemark component inside of WaypointMark', () => {
-    const waypointMark = shallow(<WaypointMark waypoint={waypoint} />);
+    const waypointMark = shallow(<WaypointMark waypoint={waypoint} getGeocode={() => {}} />);
     expect(waypointMark.containsMatchingElement(<Placemark />)).to.equal(true);
   });
 });

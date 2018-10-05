@@ -20,6 +20,7 @@ describe('EditableMap', () => {
   };
   const updateWaypointCoordsSpy = spy();
   const registerMapCenterGetterSpy = spy();
+  const updateWaypointAddrSpy = spy();
 
 
   it('should render Ymaps, Map and Wayline', () => {
@@ -29,6 +30,7 @@ describe('EditableMap', () => {
         mapState={mapState}
         mapSize={mapSize}
         updateWaypointCoords={updateWaypointCoordsSpy}
+        updateWaypointAddr={updateWaypointAddrSpy}
         registerMapCenterGetter={registerMapCenterGetterSpy}
       />,
     );
@@ -49,6 +51,7 @@ describe('EditableMap', () => {
         mapState={mapState}
         mapSize={mapSize}
         updateWaypointCoords={updateWaypointCoordsSpy}
+        updateWaypointAddr={updateWaypointAddrSpy}
         registerMapCenterGetter={registerMapCenterGetterSpy}
       />,
     );
@@ -56,4 +59,5 @@ describe('EditableMap', () => {
       expect(editableMap.find(<WaypointMark />).length).to.equal(2);
     }, 200);
   });
+
 });

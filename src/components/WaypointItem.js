@@ -6,7 +6,7 @@ import TimesIcon from './icons/TimesIcon';
 const WaypointItem = SortableElement(({ value, name, deleteWaypoint }) => {
   return (
     <li className="waypoint-item app-font app-text app-text_weight_light">
-      <span>{name}</span>
+      <span className="waypoint-item__text">{name}</span>
       <div className="waypoint-item__button-wrapper">
         <TimesIcon className="cross-icon" color="#848484" />
         <button
