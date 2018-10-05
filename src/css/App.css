@@ -36,12 +36,14 @@ li{
   text-align: left;
   margin: 0;
   border-radius: 4px;
-  color: #ffffff;
+  color: white;
   /*color: #333333c4;
   background-color: rgba(255,255,255, 0.5);
   box-shadow: 4px 1px 20px 12px rgba(255,255,255, 0.5); */
 }
-
+.app-logo{
+  margin-left: 10px;
+}
 .app-heading__wrapper{
   display: flex;
   align-items: center;

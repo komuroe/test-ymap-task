@@ -19,15 +19,18 @@ class LogoIcon extends React.Component {
       fillColor = this.props.fillColor;
     }
     return(
-      <svg className='app-logo' viewBox='-15 -15 100 100' width='60' height='60' xmlns='http://www.w3.org/2000/svg' >
-      <path fill={fillColor} stroke={strokeColor} strokeMiterlimit='10' d='M21,25c0.1,0.1,0.1,0.2,0.1,0.3v26.3c0,0.3-0.2,0.6-0.5,0.7L3.3,60.1
-      c-0.5,0.2-1.1-0.2-1.1-0.7v-32c0-0.3,0.2-0.6,0.5-0.7l15.2-6.9c0.4-0.2,0.9,0,1,0.4C19.5,21.8,20.2,23.4,21,25z'/>
-      <path fill={fillColor} stroke={strokeColor} strokeMiterlimit='10' d='M68.6,52.3l-17.3,7.8c-0.5,0.2-1.1-0.1-1.1-0.7v-32
-      c0-0.3,0.2-0.6,0.5-0.7L68,19c0.5-0.2,1.1,0.1,1.1,0.7v32C69.1,51.9,68.9,52.2,68.6,52.3z'/>
-      <path fill={fillColor} stroke={strokeColor} strokeMiterlimit='10' d='M45.4,33.2c0.4-0.6,1.4-0.3,1.4,0.4v25.9c0,0.5-0.5,0.9-1,0.7
-      l-21.4-7.9c-0.3-0.1-0.5-0.4-0.5-0.7V32.4c0-0.7,1-1,1.4-0.4c4.3,6.5,9.1,11.8,10.5,11.8C37,43.8,41.3,39.1,45.4,33.2z'/>
-      <path fill={fillColor} stroke={strokeColor} strokeMiterlimit='10' d='M35.7,1.3c-7.6,0-13.8,6.2-13.8,13.8S33.6,38,35.7,38
-      s13.8-15.2,13.8-22.8S43.3,1.3,35.7,1.3z M35.7,18.9c-2.4,0-4.4-2-4.4-4.4s2-4.4,4.4-4.4s4.4,2,4.4,4.4S38.1,18.9,35.7,18.9z'/>
+      <svg className='app-logo' version="1.1" xmlns='http://www.w3.org/2000/svg' x="0px" y="0px"
+        viewBox="0 0 100 100" width='60' height='60' enableBackground="new 0 0 100 100" >
+      <g>
+        <path fill={fillColor} stroke={strokeColor} strokeWidth="3" strokeMiterlimit="10" d="M30.3,25.9c-9,0-16.4,7.3-16.4,16.4
+          s13.9,27.4,16.4,27.4s16.4-18.1,16.4-27.1S39.3,25.9,30.3,25.9z M30.3,46.9c-2.9,0-5.2-2.4-5.2-5.2c0-2.9,2.4-5.2,5.2-5.2
+          s5.2,2.4,5.2,5.2C35.5,44.5,33.1,46.9,30.3,46.9z"/>
+        <path fill={fillColor} stroke={strokeColor} strokeWidth="3" strokeMiterlimit="10" d="M77,25.2c-5,0-9.1,4.1-9.1,9.1s7.7,15.1,9.1,15.1
+          c1.4,0,9.1-10,9.1-15.1S82,25.2,77,25.2z M77,36.9c-1.5,0-2.9-1.4-2.9-2.9c0-1.5,1.4-2.9,2.9-2.9s2.9,1.4,2.9,2.9
+          C79.9,35.5,78.6,36.9,77,36.9z"/>
+        <path fill={fillColor} stroke={strokeColor} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="
+          M77,54.5c-1.3-0.2-20.9-1.5-20.2,2.7c0.7,4.2,21.7,6.9,22,13.4c0.3,6.5-48.5,4.7-48.5,4.7"/>
+      </g>
       </svg>
     )
   }

@@ -1,9 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: "./src/index.html",
+  filename: "./index.html",
+  favicon: './public/images/favicon.ico',
+});
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -19,15 +26,8 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
-    filename: 'bundle.js',
+    path: path.resolve('dist'),
+    filename: 'bundled.js',
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
-    hotOnly: true,
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [htmlPlugin],
 };
