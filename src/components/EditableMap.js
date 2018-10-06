@@ -74,18 +74,18 @@ class EditableMap extends React.Component {
           onClick={this.getGeocode}
         >
 
-        {this.props.waypoints.map((waypoint) => (
-          <WaypointMark 
-            key={`waypointMark-${waypoint.id}`} 
-            waypoint={waypoint}
-            updateWaypointCoords={this.props.updateWaypointCoords}
-            updateWaypointAddr={this.props.updateWaypointAddr}
-            getGeocode={this.getGeocode}
-          />
-        ))}
+          {this.props.waypoints.map((waypoint) => (
+            <WaypointMark 
+              key={`waypointMark-${waypoint.id}`} 
+              waypoint={waypoint}
+              updateWaypointCoords={this.props.updateWaypointCoords}
+              updateWaypointAddr={this.props.updateWaypointAddr}
+              getGeocode={this.getGeocode}
+            />
+          ))}
 
-        <Wayline waypoints={this.props.waypoints}/>
-
+          <Wayline waypoints={this.props.waypoints}/>
+          
 				</Map>
 			</YMaps>
 		);

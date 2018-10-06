@@ -34,8 +34,8 @@ class WaypointMark extends React.Component {
           coordinates: coords
         }}
         properties={{
-          balloonContentHeader: `<span class="app-font app-text app-text_weight_bold">${name}</span>`,
-          balloonContentBody: `<hr class="baloon__hr"></hr><span class="baloon__text app-font">${addr}</span>`,
+          balloonContentHeader: `<span class="baloon__text app-font app-text app-text_weight_bold">${name}</span>`,
+          balloonContentBody: `<hr class="baloon__hr"></hr><span class="baloon__text baloon__content app-font">${addr}</span>`,
         }}
         options={{
           draggable: true,

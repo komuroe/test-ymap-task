@@ -11,12 +11,11 @@ li{
 .controls-wrapper{
   margin: 1rem;
   width: 384px;
-  max-height: 583px;
   position: relative;
   top: 0;
   left: 0;
   background-color: rgba(255, 106, 0, 0.77);
-  padding: 10px 28px 30px 28px;
+  padding: 10px 28px 8px 28px;
   border-radius: 4px;
 }
 .content-wrapper{
@@ -63,14 +62,15 @@ li{
   width: 100%;
   padding: 0;
   margin: 0;
-  max-height: 450px;
+  max-height: 460px;
   overflow: auto;
   margin-top: 22px;
   border-radius: 4px;
   display: grid;
+  overflow-x: hidden;
 }
-.waypoints-list_empty{
-  margin-top: 0;
+.waypoints-list_not_empty{
+  margin-bottom: 22px;
 }
 .waypoint-item{
   display: flex;
@@ -130,7 +130,7 @@ li{
   border-radius: 4px;
   outline: none;
   font-size: 17px;
-  padding-left: 1em;
+  padding: 0 1em;
   box-sizing: border-box;
   border: 1px solid transparent;
 }
@@ -148,18 +148,21 @@ li{
   overflow: hidden;
 }
 .baloon__text{
-  display: inline-block;
-  height: 20px;
-  color: #333;
-  width: 150px;
+  width: 200px;
   word-break: break-word;
+  display: inline-block;
+  color: #333;
+}
+.baloon__content{
+  /* height: 20px; */
   opacity: 0.8;
   font-size: 13px;
 }
 .baloon__hr{
-  background: #848484;
+  background: #b8b8b8;
   border: none;
-  color: #848484;
-  background-color: #848484;
+  color: #b8b8b8;
+  background-color: #b8b8b8;
   height: 1px;
+  opacity: 0.5;
 }

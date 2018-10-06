@@ -8,7 +8,7 @@ const WaypointItem = SortableElement(({ value, name, deleteWaypoint }) => {
     <li className="waypoint-item app-font app-text app-text_weight_light">
       <span className="waypoint-item__text">{name}</span>
       <div className="waypoint-item__button-wrapper">
-        <TimesIcon className="cross-icon" color="#848484" />
+        <TimesIcon className="cross-icon" color="#b8b8b8" />
         <button
           className="waypoint-item__button"
           type="button"

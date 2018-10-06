@@ -83,22 +83,22 @@ class App extends Component{
           />
         </div>
         <div className='controls-wrapper'>
-          <div className='content-wrapper'>
-            <div className='app-heading__wrapper'>
-              <h1 className={`app-heading app-font`}> Редактор маршрутов</h1>
-              <LogoIcon strokeColor="white" fillColor="transparent"/>
-            </div>
-          
-            <WaypointInput 
-              addWaypoint={this.addWaypoint}
-            />
 
-            <WaypointsListContainer
-              items={this.state.waypoints}
-              deleteWaypoint={this.deleteWaypoint}
-              updateWaypointsOrder={this.updateWaypointsOrder}           
-            />
+          <div className='app-heading__wrapper'>
+            <h1 className={`app-heading app-font`}> Редактор маршрутов</h1>
+            <LogoIcon strokeColor="white" fillColor="transparent"/>
           </div>
+        
+          <WaypointInput 
+            addWaypoint={this.addWaypoint}
+          />
+
+          <WaypointsListContainer
+            items={this.state.waypoints}
+            deleteWaypoint={this.deleteWaypoint}
+            updateWaypointsOrder={this.updateWaypointsOrder}           
+          />
+
         </div>
       </div>
     );
