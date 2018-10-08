@@ -9,7 +9,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: ['@babel/polyfill', './src/index.js'],
+  },
   mode: 'production',
   module: {
     rules: [
