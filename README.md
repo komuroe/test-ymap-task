@@ -10,13 +10,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 There are not many prerequisites required to build and run this project, but you'll need the following:
 
-* Node.js
+* Node.js 8+
 * Node Package Manager
 
 ### Installing
 
 ```
-git clone 
+git clone https://github.com/komuroe/ymap-route-editor.git
 cd ymap-route-editor
 npm install
 ```
