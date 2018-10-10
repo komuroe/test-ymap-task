@@ -1,6 +1,6 @@
 # Simple route editor application
 
-Route editor application. Allows to leave the named placemarks on the map, connects them with a polyline, and also displays all the entered points in the list. See [demo](https://komuroe.github.io/ymap-route-editor/docs/) here.
+Route editor application. Allows to leave the named placemarks on the map, connects them with a polyline, and also displays all the entered points in the list. See demo [here](https://komuroe.github.io/ymap-route-editor/docs/).
 
 ## Getting Started
 
